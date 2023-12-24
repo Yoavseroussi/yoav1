@@ -1,0 +1,19 @@
+public static boolean isIn(IntNode p, int x){
+		if(p == null){
+			return false;
+		}
+		if(p.getValue() == x) {
+			return true;
+		}
+	return isIn(p.getNext(), x)	;
+	}
+	
+	public static boolean contains(IntNode l1, IntNode l2){
+		if(l1 == null) {
+			return false;
+		}
+		if(isIn(l2, l1.getValue())){
+			return contains(l1.getNext(), l2);
+		}
+		return true;
+	}	
